@@ -1,36 +1,618 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cisternas</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <title>AquaLimpio - Desinfección con Certificación QR y Trazabilidad</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'aqua-blue': '#0077B6',
+                        'aqua-dark': '#023E8A',
+                        'aqua-light': '#ADE8F4',
+                        'success-green': '#06D6A0',
+                        'alert-red': '#E63946',
+                        'dark-card': '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #023E8A 0%, #0077B6 100%);
+        }
+        .step-card {
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Bienvenidos a Nuestra Página de Cisternas</h1>
+
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-aqua-dark text-2xl font-black flex items-center gap-2">
+                <span>💧 AquaLimpio</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600">
+                <a href="#problema" class="hover:text-aqua-blue transition">El Problema</a>
+                <a href="#solucion" class="hover:text-aqua-blue transition">Servicios</a>
+                <a href="#proceso" class="hover:text-aqua-blue transition">Proceso</a>
+            </nav>
+            <a href="#contacto" class="bg-success-green text-white font-bold py-2.5 px-6 rounded-full shadow-lg transition duration-300 hover:bg-green-500 flex items-center gap-2 text-sm">
+                <span>Emergencias 24/7</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </a>
+        </div>
     </header>
-    <main>
-        <section>
-            <h2>¿Qué es una cisterna?</h2>
-            <p>Una cisterna es un depósito diseñado para almacenar agua u otros líquidos. Son esenciales para garantizar el suministro de agua en hogares, industrias y comunidades.</p>
+
+    <main class="pt-20">
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero-gradient text-white py-20 md:py-32 relative overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- Columna Texto -->
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <div class="inline-flex items-center bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase mb-6">
+                            <span class="w-2 h-2 bg-success-green rounded-full mr-2 animate-pulse"></span>
+                            Cumplimiento Normativo MINSA / DIGESA
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
+                            Desinfección Certificada <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-aqua-light to-white">Sin Engaños.</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
+                            Garantizamos agua segura con <strong>Certificado Digital QR</strong>, evidencia fotográfica en 24h y cortes de servicio optimizados.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#contacto" class="bg-white text-aqua-dark text-lg font-bold py-4 px-8 rounded-xl shadow-xl transition duration-300 transform hover:scale-105 hover:shadow-2xl text-center">
+                                Cotizar Ahora
+                            </a>
+                            <a href="#proceso" class="flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-white/30 text-white font-bold hover:bg-white/10 transition duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4h2v-4zM6 19v-4H4v4h2zm14-9.293V19a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9.293l2.414 2.414z"/></svg>
+                                Ver Proceso
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna Imagen -->
+                    <div class="w-full md:w-1/2 relative">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 transform rotate-1 hover:rotate-0 transition duration-500">
+                            <img src="images/hero-limpio.jpg" 
+                                 alt="Técnico certificado realizando desinfección" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.src='https://placehold.co/600x450/023E8A/FFFFFF?text=FOTO:+Técnico+Limpiando+(hero-limpio.jpg)'">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section>
-            <h2>Nuestros Servicios</h2>
-            <ul>
-                <li>Instalación de cisternas</li>
-                <li>Mantenimiento y limpieza</li>
-                <li>Asesoría personalizada</li>
-            </ul>
+
+        <!-- ===== EL PROBLEMA ===== -->
+        <section id="problema" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
+                    <div class="w-full md:w-1/2">
+                        <div class="relative rounded-2xl overflow-hidden shadow-lg border-4 border-red-100">
+                            <img src="images/cisterna-sucia.jpg" 
+                                 alt="Interior de cisterna sucia" 
+                                 class="w-full h-64 md:h-80 object-cover"
+                                 onerror="this.src='https://placehold.co/600x400/B91C1C/FFFFFF?text=FOTO:+Cisterna+Sucia+(cisterna-sucia.jpg)'">
+                            <div class="absolute bottom-0 left-0 bg-red-600 text-white px-4 py-2 font-bold text-sm">
+                                ⚠️ Riesgo de Salud
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-6">
+                            ¿Sabes realmente qué hay en el fondo de tu tanque?
+                        </h2>
+                        <p class="text-gray-600 text-lg mb-6">
+                            Nuestra investigación confirma que el 70% de administradores desconfía de sus proveedores actuales por falta de transparencia.
+                        </p>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center shrink-0 mr-4 text-2xl">🦠</div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-gray-900">Bacterias Invisibles</h4>
+                                    <p class="text-gray-600">Sedimentos y biofilm que enferman a tu familia.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center shrink-0 mr-4 text-2xl">🤥</div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-gray-900">Engaño en el Servicio</h4>
+                                    <p class="text-gray-600">Proveedores que usan "pastillas" inútiles o cobran extras.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center shrink-0 mr-4 text-2xl">⏳</div>
+                                <div>
+                                    <h4 class="font-bold text-xl text-gray-900">Cortes Eternos</h4>
+                                    <p class="text-gray-600">Dejar el edificio sin agua por días por falta de equipos.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section>
-            <h2>Contáctanos</h2>
-            <p>Para más información, envíanos un correo a <a href="mailto:info@cisternas.com">info@cisternas.com</a>.</p>
+
+        <!-- ===== SERVICIOS POR SEGMENTO ===== -->
+        <section id="solucion" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Soluciones a tu Medida</h2>
+                    <p class="text-gray-600">Protocolos adaptados según normativa vigente.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 group">
+                        <div class="h-64 overflow-hidden relative">
+                             <img src="images/segmento-empresa.jpg" 
+                                  alt="Empresas" 
+                                  class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
+                                  onerror="this.src='https://placehold.co/600x400/023E8A/FFFFFF?text=FOTO:+Empresas+(segmento-empresa.jpg)'">
+                            <div class="absolute top-4 right-4 bg-white/90 text-aqua-dark font-bold px-3 py-1 rounded-full text-xs uppercase shadow">
+                                Sector Corporativo
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Colegios, Clínicas, HORECA</h3>
+                            <ul class="space-y-3 text-gray-600 mb-8">
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Válido para Defensa Civil.</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Horario Nocturno disponible.</li>
+                            </ul>
+                            <a href="#contacto" class="block w-full py-3 border-2 border-aqua-blue text-aqua-blue font-bold text-center rounded-lg hover:bg-aqua-blue hover:text-white transition">Solicitar Visita Técnica</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 group">
+                        <div class="h-64 overflow-hidden relative">
+                             <img src="images/segmento-casa.jpg" 
+                                  alt="Residencial" 
+                                  class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
+                                  onerror="this.src='https://placehold.co/600x400/0077B6/FFFFFF?text=FOTO:+Condominios+(segmento-casa.jpg)'">
+                            <div class="absolute top-4 right-4 bg-white/90 text-aqua-blue font-bold px-3 py-1 rounded-full text-xs uppercase shadow">
+                                Residencial
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Condominios y Edificios</h3>
+                            <ul class="space-y-3 text-gray-600 mb-8">
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Coordinación con Juntas.</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Cortes de solo 2-4 horas.</li>
+                            </ul>
+                            <a href="#contacto" class="block w-full py-3 border-2 border-aqua-blue text-aqua-blue font-bold text-center rounded-lg hover:bg-aqua-blue hover:text-white transition">Cotizar para mi Edificio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROCESO INTERACTIVO (10 PASOS) ===== -->
+        <section id="proceso" class="py-20 bg-white relative overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-black text-gray-900">Protocolo de 10 Pasos</h2>
+                    <p class="text-gray-600">Proceso integral para cisternas de ladrillo y concreto.</p>
+                </div>
+
+                <!-- Contenedor del Wizard -->
+                <div class="max-w-4xl mx-auto">
+                    <div id="steps-container" class="relative min-h-[550px]">
+                        
+                        <!-- PASO 1 -->
+                        <div id="step-1" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-1.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+1:+Corte+y+Preparación'">
+                                <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 01</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">01</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Corte y Preparación</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Inicio del Servicio</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Se cierra la entrada de agua, se desconecta la cisterna de la red interna y se informa al cliente sobre el corte temporal.
+                                </p>
+                                <button onclick="showStep(2)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                    Siguiente
+                                    <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PASO 2 -->
+                        <div id="step-2" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-2.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+2:+Muestra+Inicial'">
+                                <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 02</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">02</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Muestra Inicial</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Análisis Previo</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Antes de vaciar, tomamos una muestra directa para verificar el estado inicial del agua (olor, color, turbidez y cloro).
+                                </p>
+                                <div class="flex gap-4">
+                                    <button onclick="showStep(1)" class="text-gray-500 hover:text-white transition">Anterior</button>
+                                    <button onclick="showStep(3)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                        Siguiente
+                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 3 -->
+                        <div id="step-3" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-3.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+3:+Vaciado'">
+                                <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 03</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">03</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Vaciado</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Extracción Total</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Extraemos toda el agua almacenada con bombas sumergibles y retiramos el remanente manualmente hasta dejar el piso descubierto.
+                                </p>
+                                <div class="flex gap-4">
+                                    <button onclick="showStep(2)" class="text-gray-500 hover:text-white transition">Anterior</button>
+                                    <button onclick="showStep(4)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                        Siguiente
+                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 4 -->
+                        <div id="step-4" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-4.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+4:+Limpieza+Mecánica'">
+                                <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 04</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">04</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Limpieza Mecánica</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Cepillado Profundo</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Retiro de lodos y cepillado vigoroso de paredes y juntas. Verificamos fisuras o desprendimientos para recomendar reparaciones.
+                                </p>
+                                <div class="flex gap-4">
+                                    <button onclick="showStep(3)" class="text-gray-500 hover:text-white transition">Anterior</button>
+                                    <button onclick="showStep(5)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                        Siguiente
+                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 5 -->
+                        <div id="step-5" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-5.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+5:+Enjuague'">
+                                <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 05</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">05</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Enjuague</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Primer Lavado</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Enjuagamos el interior con agua limpia a presión para arrastrar toda la suciedad desprendida y retiramos esa agua por completo.
+                                </p>
+                                <div class="flex gap-4">
+                                    <button onclick="showStep(4)" class="text-gray-500 hover:text-white transition">Anterior</button>
+                                    <button onclick="showStep(6)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                        Siguiente
+                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 6 -->
+                        <div id="step-6" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-6.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+6:+Desinfección'">
+                                <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 06</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">06</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Desinfección</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Aplicación Química</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Aplicamos solución desinfectante (hipoclorito) sobre paredes, piso y rincones, dejando actuar el tiempo necesario para eliminar patógenos.
+                                </p>
+                                <div class="flex gap-4">
+                                    <button onclick="showStep(5)" class="text-gray-500 hover:text-white transition">Anterior</button>
+                                    <button onclick="showStep(7)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                        Siguiente
+                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 7 -->
+                        <div id="step-7" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-7.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+7:+Enjuague+Final'">
+                                <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 07</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">07</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Enjuague Final</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Retiro de Químicos</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Realizamos un nuevo enjuague para retirar el exceso de desinfectante y asegurar que el agua sea apta para consumo humano.
+                                </p>
+                                <div class="flex gap-4">
+                                    <button onclick="showStep(6)" class="text-gray-500 hover:text-white transition">Anterior</button>
+                                    <button onclick="showStep(8)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                        Siguiente
+                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 8 -->
+                        <div id="step-8" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-8.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+8:+Llenado'">
+                                <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 08</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">08</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Llenado</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Restitución del Servicio</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Cerramos desagües, abrimos la alimentación y llenamos la cisterna con agua limpia hasta su nivel operativo.
+                                </p>
+                                <div class="flex gap-4">
+                                    <button onclick="showStep(7)" class="text-gray-500 hover:text-white transition">Anterior</button>
+                                    <button onclick="showStep(9)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                        Siguiente
+                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 9 -->
+                        <div id="step-9" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-9.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+9:+Muestra+Final'">
+                                <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 09</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">09</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Muestra Final</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Verificación de Calidad</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Tomamos una segunda muestra del agua limpia para comparar resultados con la inicial y demostrar la mejora en la calidad.
+                                </p>
+                                <div class="flex gap-4">
+                                    <button onclick="showStep(8)" class="text-gray-500 hover:text-white transition">Anterior</button>
+                                    <button onclick="showStep(10)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                        Siguiente
+                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 10 (FINAL) -->
+                        <div id="step-10" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <img src="images/paso-10.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+10:+Cierre'">
+                                <div class="absolute top-4 left-4 bg-success-green text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 10</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">10</span>
+                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Cierre y Reporte</h3>
+                                <h4 class="text-lg font-semibold text-white mb-4">Entrega de Resultados</h4>
+                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                                    Explicamos el trabajo realizado, entregamos los resultados y recomendamos la frecuencia ideal de limpieza y reparaciones.
+                                </p>
+                                <div class="flex gap-4 items-center">
+                                    <button onclick="showStep(9)" class="text-gray-500 hover:text-white transition">Anterior</button>
+                                    <a href="#contacto" class="bg-success-green text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white hover:text-success-green transition">
+                                        ¡Solicitar Servicio!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Indicadores de Puntos (Dots) -->
+                    <div class="flex justify-center flex-wrap gap-2 mt-8 px-4">
+                        <button onclick="showStep(1)" id="dot-1" class="w-3 h-3 rounded-full bg-aqua-blue transition-all duration-300 scale-125"></button>
+                        <button onclick="showStep(2)" id="dot-2" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"></button>
+                        <button onclick="showStep(3)" id="dot-3" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"></button>
+                        <button onclick="showStep(4)" id="dot-4" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"></button>
+                        <button onclick="showStep(5)" id="dot-5" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"></button>
+                        <button onclick="showStep(6)" id="dot-6" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"></button>
+                        <button onclick="showStep(7)" id="dot-7" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"></button>
+                        <button onclick="showStep(8)" id="dot-8" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"></button>
+                        <button onclick="showStep(9)" id="dot-9" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"></button>
+                        <button onclick="showStep(10)" id="dot-10" class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FORMULARIO ===== -->
+        <section id="contacto" class="py-20 hero-gradient text-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-2xl overflow-hidden">
+                    <div class="w-full md:w-5/12 bg-gray-900 p-12 flex flex-col justify-between relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold text-white mb-6">Contáctanos</h3>
+                            <p class="text-gray-400 mb-8">
+                                Responde en menos de 15 minutos.
+                            </p>
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
+                                        <svg class="w-6 h-6 text-success-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400 uppercase tracking-wider">Llámanos</p>
+                                        <p class="font-bold text-lg">+51 999 888 777</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
+                                        <svg class="w-6 h-6 text-success-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400 uppercase tracking-wider">Escríbenos</p>
+                                        <p class="font-bold text-lg">ventas@aqualimpio.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-7/12 p-12 text-gray-800">
+                        <h3 class="text-2xl font-bold mb-6">Solicita tu Cotización</h3>
+                        <form id="contact-form" class="space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <input type="text" placeholder="Nombre" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-aqua-blue outline-none transition">
+                                <input type="tel" placeholder="Teléfono" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-aqua-blue outline-none transition">
+                            </div>
+                            <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-aqua-blue outline-none transition">
+                                <option value="" disabled selected>Tipo de Cliente</option>
+                                <option>Residencial</option>
+                                <option>Empresa</option>
+                            </select>
+                            <button type="submit" class="w-full bg-gradient-to-r from-aqua-dark to-aqua-blue text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300">
+                                ¡Obtener Presupuesto Gratis!
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Cisternas. Todos los derechos reservados.</p>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm">&copy; 2025 AquaLimpio S.A.C.</p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Modal Éxito -->
+    <div id="modal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-sm w-full text-center transform scale-95 transition-transform duration-300" id="modal-content">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-success-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-900">¡Solicitud Enviada!</h3>
+            <button id="close-modal-btn" class="w-full bg-aqua-dark text-white py-3 px-4 rounded-xl font-bold transition hover:bg-aqua-blue mt-4">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT PARA EL WIZARD PASO A PASO -->
+    <script>
+        function showStep(stepNumber) {
+            // 1. Ocultar todos los pasos primero
+            for (let i = 1; i <= 10; i++) {
+                const el = document.getElementById(`step-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+                
+                // Resetear clases
+                el.classList.add('hidden', 'opacity-0', 'translate-x-full');
+                el.classList.remove('flex'); // Quitar flex para que se oculte bien
+                
+                // Resetear puntos
+                dot.classList.remove('bg-aqua-blue', 'scale-125');
+                dot.classList.add('bg-gray-300');
+            }
+
+            // 2. Mostrar el paso seleccionado con animación
+            const currentEl = document.getElementById(`step-${stepNumber}`);
+            const currentDot = document.getElementById(`dot-${stepNumber}`);
+
+            // Quitar hidden y preparar para animar
+            currentEl.classList.remove('hidden', 'translate-x-full');
+            currentEl.classList.add('flex'); // Volver a poner flex
+            
+            // Pequeño delay para que la transición de opacidad se note
+            setTimeout(() => {
+                currentEl.classList.remove('opacity-0');
+            }, 10);
+
+            // Actualizar punto activo
+            currentDot.classList.remove('bg-gray-300');
+            currentDot.classList.add('bg-aqua-blue', 'scale-125');
+        }
+
+        // Lógica del Modal
+        const contactForm = document.getElementById('contact-form');
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        });
+
+        closeModalBtn.addEventListener('click', function() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                contactForm.reset();
+            }, 300);
+        });
+    </script>
 </body>
 </html>
