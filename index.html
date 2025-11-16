@@ -37,7 +37,7 @@
             background: linear-gradient(135deg, #023E8A 0%, #0077B6 100%);
         }
         .step-card {
-            transition: all 0.5s ease-in-out;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -215,49 +215,50 @@
 
                 <!-- Contenedor del Wizard -->
                 <div class="max-w-4xl mx-auto">
-                    <div id="steps-container" class="relative min-h-[550px]">
+                    <!-- Importante: Eliminamos min-h fijo para que se adapte al contenido -->
+                    <div id="steps-container" class="relative w-full">
                         
                         <!-- PASO 1 -->
-                        <div id="step-1" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-1" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-1.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+1:+Corte+y+Preparación'">
                                 <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 01</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">01</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Corte y Preparación</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Inicio del Servicio</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">01</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Corte y Preparación</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Inicio del Servicio</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Se cierra la entrada de agua, se desconecta la cisterna de la red interna y se informa al cliente sobre el corte temporal.
                                 </p>
-                                <button onclick="showStep(2)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                <button onclick="showStep(2)" class="group flex items-center gap-3 text-white font-bold text-base md:text-lg hover:text-aqua-light transition w-max">
                                     Siguiente
-                                    <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                    <div class="bg-aqua-blue p-2 md:p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </div>
                                 </button>
                             </div>
                         </div>
 
                         <!-- PASO 2 -->
-                        <div id="step-2" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-2" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-2.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+2:+Muestra+Inicial'">
                                 <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 02</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">02</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Muestra Inicial</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Análisis Previo</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">02</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Muestra Inicial</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Análisis Previo</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Antes de vaciar, tomamos una muestra directa para verificar el estado inicial del agua (olor, color, turbidez y cloro).
                                 </p>
                                 <div class="flex gap-4">
-                                    <button onclick="showStep(1)" class="text-gray-500 hover:text-white transition">Anterior</button>
-                                    <button onclick="showStep(3)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                    <button onclick="showStep(1)" class="text-gray-500 hover:text-white transition text-sm md:text-base">Anterior</button>
+                                    <button onclick="showStep(3)" class="group flex items-center gap-3 text-white font-bold text-base md:text-lg hover:text-aqua-light transition w-max">
                                         Siguiente
-                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        <div class="bg-aqua-blue p-2 md:p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                         </div>
                                     </button>
                                 </div>
@@ -265,24 +266,24 @@
                         </div>
 
                         <!-- PASO 3 -->
-                        <div id="step-3" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-3" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-3.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+3:+Vaciado'">
                                 <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 03</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">03</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Vaciado</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Extracción Total</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">03</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Vaciado</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Extracción Total</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Extraemos toda el agua almacenada con bombas sumergibles y retiramos el remanente manualmente hasta dejar el piso descubierto.
                                 </p>
                                 <div class="flex gap-4">
-                                    <button onclick="showStep(2)" class="text-gray-500 hover:text-white transition">Anterior</button>
-                                    <button onclick="showStep(4)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                    <button onclick="showStep(2)" class="text-gray-500 hover:text-white transition text-sm md:text-base">Anterior</button>
+                                    <button onclick="showStep(4)" class="group flex items-center gap-3 text-white font-bold text-base md:text-lg hover:text-aqua-light transition w-max">
                                         Siguiente
-                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        <div class="bg-aqua-blue p-2 md:p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                         </div>
                                     </button>
                                 </div>
@@ -290,24 +291,24 @@
                         </div>
 
                         <!-- PASO 4 -->
-                        <div id="step-4" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-4" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-4.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+4:+Limpieza+Mecánica'">
                                 <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 04</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">04</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Limpieza Mecánica</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Cepillado Profundo</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">04</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Limpieza Mecánica</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Cepillado Profundo</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Retiro de lodos y cepillado vigoroso de paredes y juntas. Verificamos fisuras o desprendimientos para recomendar reparaciones.
                                 </p>
                                 <div class="flex gap-4">
-                                    <button onclick="showStep(3)" class="text-gray-500 hover:text-white transition">Anterior</button>
-                                    <button onclick="showStep(5)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                    <button onclick="showStep(3)" class="text-gray-500 hover:text-white transition text-sm md:text-base">Anterior</button>
+                                    <button onclick="showStep(5)" class="group flex items-center gap-3 text-white font-bold text-base md:text-lg hover:text-aqua-light transition w-max">
                                         Siguiente
-                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        <div class="bg-aqua-blue p-2 md:p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                         </div>
                                     </button>
                                 </div>
@@ -315,24 +316,24 @@
                         </div>
 
                         <!-- PASO 5 -->
-                        <div id="step-5" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-5" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-5.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+5:+Enjuague'">
                                 <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 05</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">05</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Enjuague</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Primer Lavado</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">05</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Enjuague</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Primer Lavado</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Enjuagamos el interior con agua limpia a presión para arrastrar toda la suciedad desprendida y retiramos esa agua por completo.
                                 </p>
                                 <div class="flex gap-4">
-                                    <button onclick="showStep(4)" class="text-gray-500 hover:text-white transition">Anterior</button>
-                                    <button onclick="showStep(6)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                    <button onclick="showStep(4)" class="text-gray-500 hover:text-white transition text-sm md:text-base">Anterior</button>
+                                    <button onclick="showStep(6)" class="group flex items-center gap-3 text-white font-bold text-base md:text-lg hover:text-aqua-light transition w-max">
                                         Siguiente
-                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        <div class="bg-aqua-blue p-2 md:p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                         </div>
                                     </button>
                                 </div>
@@ -340,24 +341,24 @@
                         </div>
 
                         <!-- PASO 6 -->
-                        <div id="step-6" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-6" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-6.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+6:+Desinfección'">
                                 <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 06</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">06</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Desinfección</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Aplicación Química</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">06</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Desinfección</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Aplicación Química</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Aplicamos solución desinfectante (hipoclorito) sobre paredes, piso y rincones, dejando actuar el tiempo necesario para eliminar patógenos.
                                 </p>
                                 <div class="flex gap-4">
-                                    <button onclick="showStep(5)" class="text-gray-500 hover:text-white transition">Anterior</button>
-                                    <button onclick="showStep(7)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                    <button onclick="showStep(5)" class="text-gray-500 hover:text-white transition text-sm md:text-base">Anterior</button>
+                                    <button onclick="showStep(7)" class="group flex items-center gap-3 text-white font-bold text-base md:text-lg hover:text-aqua-light transition w-max">
                                         Siguiente
-                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        <div class="bg-aqua-blue p-2 md:p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                         </div>
                                     </button>
                                 </div>
@@ -365,24 +366,24 @@
                         </div>
 
                         <!-- PASO 7 -->
-                        <div id="step-7" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-7" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-7.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+7:+Enjuague+Final'">
                                 <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 07</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">07</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Enjuague Final</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Retiro de Químicos</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">07</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Enjuague Final</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Retiro de Químicos</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Realizamos un nuevo enjuague para retirar el exceso de desinfectante y asegurar que el agua sea apta para consumo humano.
                                 </p>
                                 <div class="flex gap-4">
-                                    <button onclick="showStep(6)" class="text-gray-500 hover:text-white transition">Anterior</button>
-                                    <button onclick="showStep(8)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                    <button onclick="showStep(6)" class="text-gray-500 hover:text-white transition text-sm md:text-base">Anterior</button>
+                                    <button onclick="showStep(8)" class="group flex items-center gap-3 text-white font-bold text-base md:text-lg hover:text-aqua-light transition w-max">
                                         Siguiente
-                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        <div class="bg-aqua-blue p-2 md:p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                         </div>
                                     </button>
                                 </div>
@@ -390,24 +391,24 @@
                         </div>
 
                         <!-- PASO 8 -->
-                        <div id="step-8" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-8" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-8.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+8:+Llenado'">
                                 <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 08</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">08</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Llenado</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Restitución del Servicio</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">08</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Llenado</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Restitución del Servicio</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Cerramos desagües, abrimos la alimentación y llenamos la cisterna con agua limpia hasta su nivel operativo.
                                 </p>
                                 <div class="flex gap-4">
-                                    <button onclick="showStep(7)" class="text-gray-500 hover:text-white transition">Anterior</button>
-                                    <button onclick="showStep(9)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                    <button onclick="showStep(7)" class="text-gray-500 hover:text-white transition text-sm md:text-base">Anterior</button>
+                                    <button onclick="showStep(9)" class="group flex items-center gap-3 text-white font-bold text-base md:text-lg hover:text-aqua-light transition w-max">
                                         Siguiente
-                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        <div class="bg-aqua-blue p-2 md:p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                         </div>
                                     </button>
                                 </div>
@@ -415,24 +416,24 @@
                         </div>
 
                         <!-- PASO 9 -->
-                        <div id="step-9" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-9" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-9.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+9:+Muestra+Final'">
                                 <div class="absolute top-4 left-4 bg-aqua-blue text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 09</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">09</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Muestra Final</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Verificación de Calidad</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">09</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Muestra Final</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Verificación de Calidad</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Tomamos una segunda muestra del agua limpia para comparar resultados con la inicial y demostrar la mejora en la calidad.
                                 </p>
                                 <div class="flex gap-4">
-                                    <button onclick="showStep(8)" class="text-gray-500 hover:text-white transition">Anterior</button>
-                                    <button onclick="showStep(10)" class="group flex items-center gap-3 text-white font-bold text-lg hover:text-aqua-light transition w-max">
+                                    <button onclick="showStep(8)" class="text-gray-500 hover:text-white transition text-sm md:text-base">Anterior</button>
+                                    <button onclick="showStep(10)" class="group flex items-center gap-3 text-white font-bold text-base md:text-lg hover:text-aqua-light transition w-max">
                                         Siguiente
-                                        <div class="bg-aqua-blue p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        <div class="bg-aqua-blue p-2 md:p-3 rounded-full group-hover:bg-white group-hover:text-aqua-blue transition shadow-lg">
+                                            <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                         </div>
                                     </button>
                                 </div>
@@ -440,21 +441,21 @@
                         </div>
 
                         <!-- PASO 10 (FINAL) -->
-                        <div id="step-10" class="step-card absolute inset-0 w-full h-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
-                            <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                        <div id="step-10" class="step-card w-full flex flex-col md:flex-row bg-dark-card rounded-2xl overflow-hidden shadow-2xl hidden opacity-0 translate-x-full">
+                            <div class="w-full md:w-1/2 h-48 md:h-auto relative shrink-0">
                                 <img src="images/paso-10.jpg" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/333/fff?text=Paso+10:+Cierre'">
                                 <div class="absolute top-4 left-4 bg-success-green text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg">Paso 10</div>
                             </div>
-                            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
-                                <span class="text-8xl font-black text-white/5 absolute top-4 right-4 select-none">10</span>
-                                <h3 class="text-3xl font-bold text-aqua-light mb-2">Cierre y Reporte</h3>
-                                <h4 class="text-lg font-semibold text-white mb-4">Entrega de Resultados</h4>
-                                <p class="text-gray-300 text-base leading-relaxed mb-8">
+                            <div class="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-white relative">
+                                <span class="text-6xl md:text-8xl font-black text-white/5 absolute top-4 right-4 select-none">10</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-aqua-light mb-2">Cierre y Reporte</h3>
+                                <h4 class="text-base md:text-lg font-semibold text-white mb-4">Entrega de Resultados</h4>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
                                     Explicamos el trabajo realizado, entregamos los resultados y recomendamos la frecuencia ideal de limpieza y reparaciones.
                                 </p>
                                 <div class="flex gap-4 items-center">
-                                    <button onclick="showStep(9)" class="text-gray-500 hover:text-white transition">Anterior</button>
-                                    <a href="#contacto" class="bg-success-green text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white hover:text-success-green transition">
+                                    <button onclick="showStep(9)" class="text-gray-500 hover:text-white transition text-sm md:text-base">Anterior</button>
+                                    <a href="#contacto" class="bg-success-green text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white hover:text-success-green transition text-sm md:text-base">
                                         ¡Solicitar Servicio!
                                     </a>
                                 </div>
